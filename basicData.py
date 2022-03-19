@@ -7,7 +7,7 @@ import pandas as pd
 
 # 基金代码
 code = []
-for line in open("data.txt","r"): #设置文件对象并读取每一行文件
+for line in open("data.txt","r"): 
     test = line.strip('\n')
     code.append(test)
 
@@ -37,8 +37,8 @@ output = open('basicData.xls','w',encoding='gbk')
 output.write('基金代码\t基金名称\t基金种类\t基金成立时间\t托管银行名称\n')
 for i in range(len(htmls)):
     for j in range(len(htmls[i])):
-        output.write(str(htmls[i][j]))  #write函数不能写int类型的参数，所以使用str()转化
-        output.write('\t')  #相当于Tab一下，换一个单元格
-    output.write('\n')    #写完一行立马换行
+        output.write(str(htmls[i][j]))  
+        output.write('\t') 
+    output.write('\n')   
 output.close()
 
